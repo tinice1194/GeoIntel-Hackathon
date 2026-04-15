@@ -8,7 +8,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 from torch import nn, optim
 
-from unet_model import UNet
+from modelv1 import UNet
 
 os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
 

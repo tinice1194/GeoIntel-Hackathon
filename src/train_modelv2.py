@@ -42,8 +42,8 @@ class SegmentationDataset(Dataset):
         img_path = self.files[idx]
         mask_path = self.mask_dir / img_path.name
 
-        image = np.load(img_path)   # HWC
-        mask = np.load(mask_path)   # HW
+        image = np.load(img_path)        
+        mask = np.load(mask_path)       
 
 
         image = image / 255.0
@@ -109,7 +109,7 @@ def train_one_epoch(model, loader, optimizer, scaler, criterion, epoch):
         optimizer.zero_grad()
 
         with torch.cuda.amp.autocast(enabled=(DEVICE == "cuda")):
-            outputs = model(images)["out"]   # IMPORTANT
+            outputs = model(images)["out"]              
             loss = criterion(outputs, masks)
 
         scaler.scale(loss).backward()

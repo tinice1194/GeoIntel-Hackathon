@@ -196,7 +196,7 @@ def main() -> None:
         gdf = assign_building_ids(gdf)
         gdf = assign_splits(gdf)
 
-        # Create raster bounds polygon using shapely.box
+                                                        
         left, bottom, right, top = src.bounds
         raster_bounds_geom = gpd.GeoSeries([box(left, bottom, right, top)], crs=src.crs).iloc[0]
 

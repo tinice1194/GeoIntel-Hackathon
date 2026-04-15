@@ -6,7 +6,7 @@ import rasterio
 from rasterio.windows import Window
 import torch
 
-from unet_model import UNet
+from modelv1 import UNet
 
 PROJECT_ROOT = Path(r"G:\GIS_AI_PROJECT")
 
